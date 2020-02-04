@@ -71,4 +71,4 @@ hype_bmi.o:			hype_bmi.cc hype_bmi.h
 clean:
 	rm -f *.o *.mod
 	rm -rf hypecode
-	rm hype_bmi_server hype_bmi_test
+	rm -rf hype_bmi_server hype_bmi_test

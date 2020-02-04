@@ -35,10 +35,11 @@ RUN make install
 # Build hype-bmi
 COPY . /opt/hype-bmi
 WORKDIR /opt/hype-bmi/src
+RUN make clean
 RUN make
 
 VOLUME /data
 # WORKDIR /data
-ENV LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/usr/local/lib"
+ENV LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/usr/local/lib:/usr/lib/x86_64-linux-gnu/"
 ENV PATH="${PATH}:/usr/local/bin"
 ENTRYPOINT ["/opt/hype-bmi/src/hype_bmi_server"]
