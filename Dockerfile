@@ -10,7 +10,7 @@ RUN apt-get update
 RUN apt-get install -y wget git build-essential g++ make cmake curl automake libtool pkg-config gfortran
 
 # Build grpc from source
-RUN git clone -b $(curl -L https://grpc.io/release) --depth=1 https://github.com/grpc/grpc /opt/grpc
+RUN git clone --depth=1 -b v1.20.0 https://github.com/grpc/grpc /opt/grpc
 WORKDIR /opt/grpc
 RUN git submodule update --init --recursive
 RUN make install
