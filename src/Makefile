@@ -47,7 +47,7 @@ hypecode:
 endif
 
 hype_bmi_server:	hypelib.o hype_bmi.o run-bmi-server.o
-	$(CXX) $(LDFLAGS) -o hype_bmi_server hypelib.o run-bmi-server.o hype_bmi.o $(shell find ./hypecode/ -name "*.o" ! -name "main.o") -lgfortran `pkg-config --libs protobuf grpc++ grpc` -Wl,--no-as-needed -lgrpc++_reflection -Wl,--as-needed -ldl -lgrpc4bmi
+	$(CXX) $(LDFLAGS) -o hype_bmi_server hypelib.o run-bmi-server.o hype_bmi.o $(shell find ./hypecode/ -name "*.o" ! -name "main.o") -lgfortran `pkg-config --libs protobuf grpc++ grpc` -Wl,--no-as-needed -lgrpc++_reflection -Wl,--as-needed -ldl -lgrpc4bmi -lbmic
 
 hype_bmi_test:		hypelib.o mainbmi.o hype_bmi.o
 	$(CXX) $(LDFLAGS) -o hype_bmi_test hypelib.o mainbmi.o hype_bmi.o $(shell find ./hypecode/ -name "*.o" ! -name "main.o") -lgfortran
