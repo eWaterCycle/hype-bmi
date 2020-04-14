@@ -202,7 +202,7 @@ int HypeBmi::get_end_time(double* dest) const
 
 int HypeBmi::get_time_units(char* dest) const
 {
-    strcpy(dest, "hours since blabla\0");
+    strcpy(dest, "hours since start of simulation\0");
     return BMI_SUCCESS;
 }
 

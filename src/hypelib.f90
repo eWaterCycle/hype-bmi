@@ -84,13 +84,13 @@ CONTAINS
     FUNCTION get_end_time() RESULT(ret) bind(c, name="get_hype_end_time")
 
         USE, INTRINSIC :: ISO_C_BINDING
-        USE MODVAR,       ONLY : currentdate
+        USE WORLDVAR,       ONLY : sdate
 
         IMPLICIT NONE
 
         REAL(KIND=C_FLOAT)      :: ret
 
-        ret = convert_hype_time(currentdate)
+        ret = convert_hype_time(sdate)
 
     END FUNCTION get_end_time
 
