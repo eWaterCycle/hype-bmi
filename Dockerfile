@@ -18,7 +18,7 @@ WORKDIR third_party/protobuf
 RUN make install
 
 # Build bmi-c from source
-RUN git clone --depth=1 -b v0.2.3 https://github.com/eWaterCycle/grpc4bmi.git /opt/grpc4bmi
+RUN git clone --depth=1 -b v0.2.11 https://github.com/eWaterCycle/grpc4bmi.git /opt/grpc4bmi
 WORKDIR /opt/grpc4bmi
 RUN git submodule update --init --recursive
 RUN mkdir -p /opt/grpc4bmi/cpp/bmi-c/build
